@@ -11,32 +11,43 @@ class DoctorList extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          Card(
-            child: Container(
-              padding: EdgeInsets.all(15),
-              child: Row(
-                children: [
-                  CircleAvatar(
-                    radius: 40,
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Dr. Jhon Doe',
-                        style: Theme.of(context).textTheme.headline6,
-                      ),
-                      Text('Dermotologist')
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          )
+          DoctorCard(),
         ],
+      ),
+    );
+  }
+}
+
+class DoctorCard extends StatelessWidget {
+  const DoctorCard({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: Container(
+        padding: EdgeInsets.all(15),
+        child: Row(
+          children: [
+            CircleAvatar(
+              radius: 30,
+            ),
+            const SizedBox(
+              width: 10,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Dr. Jhon Doe',
+                  style: Theme.of(context).textTheme.headline6,
+                ),
+                Text('Dermotologist')
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
